@@ -1,0 +1,105 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Navigation */
+.nav {
+    background-color: #444;
+}
+
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.nav ul li {
+    margin: 0;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+}
+
+.nav ul li a:hover {
+    background-color: #555;
+}
+
+/* Main Content */
+.main {
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+
+/* For tablets */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column; /* Stack the nav items vertically */
+        align-items: center;
+    }
+
+    .nav ul li a {
+        padding: 10px 15px; /* Adjust padding */
+    }
+
+    .main {
+        padding: 15px; /* Adjust padding */
+    }
+}
+
+/* For mobile phones */
+@media (max-width: 480px) {
+    .header {
+        padding: 0.5rem 0; /* Reduce padding for smaller screens */
+    }
+
+    .nav ul {
+        flex-direction: column; /* Stack the nav items vertically */
+        align-items: center;
+    }
+
+    .nav ul li a {
+        padding: 8px 10px; /* Further adjust padding */
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .main {
+        padding: 10px; /* Adjust padding */
+    }
+
+    .footer {
+        padding: 8px 0; /* Adjust footer padding */
+    }
+}
+
+--------------------------------------------------------------------------

@@ -1,0 +1,168 @@
+Layout.js:
+
+// components/Layout.js
+
+import React from 'react';
+import Link from 'next/link';
+import styles from './Layout.module.css';
+
+const Layout = ({ children }) => {
+  return (
+    <div>
+      <header className={styles.header}>
+        <h1>Welcome to My Webpage</h1>
+      </header>
+      <nav className={styles.nav}>
+        <ul>
+          <li><Link href="/"><a>Home</a></Link></li>
+          <li><Link href="/about"><a>About</a></Link></li>
+          <li><Link href="/services"><a>Services</a></Link></li>
+          <li><Link href="/contact"><a>Contact</a></Link></li>
+        </ul>
+      </nav>
+      <main className={styles.main}>
+        {children}
+      </main>
+      <footer className={styles.footer}>
+        <p>&copy; 2024 My Webpage. All rights reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
+
+
+Layout.module.css:
+
+/* components/Layout.module.css */
+
+.header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.nav {
+  background-color: #444;
+}
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.nav ul li {
+  margin: 0;
+}
+
+.nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+}
+
+.nav ul li a:hover {
+  background-color: #555;
+}
+
+.main {
+  padding: 20px;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+pages/index.js:
+
+// pages/index.js
+
+import Layout from '../components/Layout';
+
+const Home = () => {
+  return (
+    <Layout>
+      <section>
+        <h2>Home</h2>
+        <p>This is the home section of the webpage.</p>
+      </section>
+    </Layout>
+  );
+};
+
+export default Home;
+
+pages/about.js:
+
+// pages/about.js
+
+import Layout from '../components/Layout';
+
+const About = () => {
+  return (
+    <Layout>
+      <section>
+        <h2>About</h2>
+        <p>This section contains information about us.</p>
+      </section>
+    </Layout>
+  );
+};
+
+export default About;
+
+
+pages/services.js:
+
+// pages/services.js
+
+import Layout from '../components/Layout';
+
+const Services = () => {
+  return (
+    <Layout>
+      <section>
+        <h2>Services</h2>
+        <p>Details of the services we offer can be found here.</p>
+      </section>
+    </Layout>
+  );
+};
+
+export default Services;
+
+
+
+pages/contact.js:
+
+// pages/contact.js
+
+import Layout from '../components/Layout';
+
+const Contact = () => {
+  return (
+    <Layout>
+      <section>
+        <h2>Contact</h2>
+        <p>Contact us through this section.</p>
+      </section>
+    </Layout>
+  );
+};
+
+export default Contact;
+
+
+

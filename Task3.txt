@@ -1,0 +1,52 @@
+// pages/index.js
+
+import Layout from '../components/Layout';
+
+const Home = ({ data }) => {
+  return (
+    <Layout>
+      <section>
+        <h2>Home</h2>
+        <p>This is the home section of the webpage.</p>
+        <div>
+          <h3>Server-Side Data</h3>
+          <ul>
+            {data.map((item) => (
+              <li key={item.id}>{item.title}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    </Layout>
+  );
+};
+
+// This function gets called at request time
+export async function getServerSideProps() {
+  // Fetch data from an API or other source
+  const res = await fetch('http://localhost:3000/api/data');
+  const data = await res.json();
+
+  // Pass data to the page via props
+  return { props: { data } };
+}
+
+export default Home;
+
+
+----------------------------------------------------------------------
+
+// pages/api/data.js
+
+export default function handler(req, res) {
+  // Example of static data; you can replace this with dynamic data fetching
+  const data = [
+    { id: 1, title: 'Item 1' },
+    { id: 2, title: 'Item 2' },
+    { id: 3, title: 'Item 3' },
+  ];
+
+  res.status(200).json(data);
+}
+
+-----------------------------------------------------------------------
